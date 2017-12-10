@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.time.Instant;
 
 @Entity
 public class Participant extends AbstractEntity{
@@ -16,13 +15,6 @@ public class Participant extends AbstractEntity{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(referencedColumnName = "ID", nullable = false, updatable = false)
     private Event event;
-
-    public Participant(Long id, Instant created, String name, String email, Boolean checkedIn) {
-        super(id, created);
-        this.name = name;
-        this.email = email;
-        this.checkedIn = checkedIn;
-    }
 
     public String getName() {
         return name;

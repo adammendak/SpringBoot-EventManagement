@@ -16,9 +16,7 @@ public abstract class AbstractEntity {
     @Column(updatable = false)
     protected Instant created;
 
-    public AbstractEntity(Long id, Instant created) {
-        this.id = id;
-        this.created = created;
+    public AbstractEntity() {
     }
 
     public Long getId() {

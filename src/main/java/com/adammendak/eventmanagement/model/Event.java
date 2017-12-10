@@ -1,5 +1,7 @@
 package com.adammendak.eventmanagement.model;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import javax.persistence.*;
 import java.time.Instant;
 import java.time.ZoneId;
@@ -26,20 +28,8 @@ public class Event extends AbstractEntity{
     private Set<Participant> participant;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @RestResource(exported = false)
     private Venue venue;
-
-    public Event(Long id, Instant created, String name, String description, ZonedDateTime startTime, ZonedDateTime endTime, ZoneId zoneId, Boolean started, Organizer organizer, Set<Participant> participant, Venue venue) {
-        super(id, created);
-        this.name = name;
-        this.description = description;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.zoneId = zoneId;
-        this.started = started;
-        this.organizer = organizer;
-        this.participant = participant;
-        this.venue = venue;
-    }
 
     public String getName() {
         return name;

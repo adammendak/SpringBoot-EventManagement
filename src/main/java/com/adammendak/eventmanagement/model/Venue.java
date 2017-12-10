@@ -1,29 +1,17 @@
 package com.adammendak.eventmanagement.model;
 
 import javax.persistence.Entity;
-import java.time.Instant;
 
 @Entity
 public class Venue extends AbstractEntity{
 
     private String name;
-    private String stringAddress;
-    private String stringAddress2;
+    private String streetAddress;
+    private String streetAddress2;
     private String city;
     private String state;
     private String country;
     private String postalCode;
-
-    public Venue(Long id, Instant created, String name, String stringAddress, String stringAddress2, String city, String state, String country, String postalCode) {
-        super(id, created);
-        this.name = name;
-        this.stringAddress = stringAddress;
-        this.stringAddress2 = stringAddress2;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.postalCode = postalCode;
-    }
 
     public String getName() {
         return name;
@@ -33,20 +21,20 @@ public class Venue extends AbstractEntity{
         this.name = name;
     }
 
-    public String getStringAddress() {
-        return stringAddress;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setStringAddress(String stringAddress) {
-        this.stringAddress = stringAddress;
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
     }
 
-    public String getStringAddress2() {
-        return stringAddress2;
+    public String getStreetAddress2() {
+        return streetAddress2;
     }
 
-    public void setStringAddress2(String stringAddress2) {
-        this.stringAddress2 = stringAddress2;
+    public void setStreetAddress2(String streetAddress2) {
+        this.streetAddress2 = streetAddress2;
     }
 
     public String getCity() {
@@ -89,9 +77,9 @@ public class Venue extends AbstractEntity{
         Venue venue = (Venue) o;
 
         if (name != null ? !name.equals(venue.name) : venue.name != null) return false;
-        if (stringAddress != null ? !stringAddress.equals(venue.stringAddress) : venue.stringAddress != null)
+        if (streetAddress != null ? !streetAddress.equals(venue.streetAddress) : venue.streetAddress != null)
             return false;
-        if (stringAddress2 != null ? !stringAddress2.equals(venue.stringAddress2) : venue.stringAddress2 != null)
+        if (streetAddress2 != null ? !streetAddress2.equals(venue.streetAddress2) : venue.streetAddress2 != null)
             return false;
         if (city != null ? !city.equals(venue.city) : venue.city != null) return false;
         if (state != null ? !state.equals(venue.state) : venue.state != null) return false;
@@ -102,8 +90,8 @@ public class Venue extends AbstractEntity{
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (stringAddress != null ? stringAddress.hashCode() : 0);
-        result = 31 * result + (stringAddress2 != null ? stringAddress2.hashCode() : 0);
+        result = 31 * result + (streetAddress != null ? streetAddress.hashCode() : 0);
+        result = 31 * result + (streetAddress2 != null ? streetAddress2.hashCode() : 0);
         result = 31 * result + (city != null ? city.hashCode() : 0);
         result = 31 * result + (state != null ? state.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
