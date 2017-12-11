@@ -1,5 +1,6 @@
 package com.adammendak.eventmanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ public class Event extends AbstractEntity{
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
+    @JsonProperty("desc")
     private String description;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;

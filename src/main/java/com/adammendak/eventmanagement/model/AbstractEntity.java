@@ -1,10 +1,12 @@
 package com.adammendak.eventmanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.Instant;
 
+@JsonPropertyOrder({"resourceId"})
 @MappedSuperclass
 public abstract class AbstractEntity {
 
